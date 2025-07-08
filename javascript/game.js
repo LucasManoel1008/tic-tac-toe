@@ -21,13 +21,11 @@
 
     function playOnBoard(index, cells) {
 
-            if(isGameOver()) return endGame();     
-            checkWinner();   
+            if(isGameOver()) return endGame();                 
             let row = getRow(index);
             let col = getCol(index)    
             if(markBoard(row, col)) { 
-                setCellValue(cells, index);
-                 
+                setCellValue(cells, index);                 
             }
             else {
                 alert('Cell already marked! Choose another one.');
@@ -118,6 +116,8 @@
         }
         function setCellValue(cells,index){
             cells[index].textContent = Game.currentPlayer;
+            
             checkWinner();
            Game.currentPlayer = Game.currentPlayer === 'X' ? 'O' : 'X'; 
+           document.getElementById('playerTime').textContent = `Current Player: ${Game.currentPlayer}`;
         }
