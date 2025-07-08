@@ -1,0 +1,63 @@
+.gameBoard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f0f0f0;
+}
+.gameBoard .board{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    width: 300px;
+    height: 300px;
+}
+
+.gameBoard .board .cell{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    cursor: pointer;
+}
+.gameBoard .board .cell:hover{
+    transform: scale(1.05);
+    background-color: var(--hover-color);
+}
+.gameBoard .buttonResetGame{
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;    
+
+}
+.gameBoard .buttonResetGame:hover{
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+.gameBoard .mainMenuButton{
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 1.2rem;    
+    color: var(--text-color);
+    border: var(--secondary-color) 2px solid;
+    border-radius: 5px;
+    cursor: pointer; 
+
+}
+.gameBoard .mainMenuButton:hover{
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+    transition: background-color 0.1s ease;
+    transition: transform 0.1s ease;
+}
