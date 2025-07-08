@@ -21,19 +21,18 @@
 
     function playOnBoard(index, cells) {
 
-            if(isGameOver()) return endGame();        
+            if(isGameOver()) return endGame();     
+            checkWinner();   
             let row = getRow(index);
             let col = getCol(index)    
             if(markBoard(row, col)) { 
                 setCellValue(cells, index);
+                 
             }
             else {
                 alert('Cell already marked! Choose another one.');
                 return;
-            }
-            
-            checkWinner();
-
+            }                        
         }
         function checkWinner(){
             if(Game.gameBoard.every(row => row.every(cell => cell !== ''))) {
@@ -45,25 +44,25 @@
                 // checar Linhas
                 if(Game.gameBoard[i][0] == Game.gameBoard[i][1] && Game.gameBoard[i][0] == Game.gameBoard[i][2] && Game.gameBoard[i][0] != '') {
                     Game.gameOver = true;                
-                    alert(`Player ${Game.gameBoard[i][0]} wins!`);
+                    alert(`Player ${Game.currentPlayer} wins!`);
                     return;
                 }
                 // checar Colunas
                 if(Game.gameBoard[0][i] == Game.gameBoard[1][i] && Game.gameBoard[0][i] == Game.gameBoard[2][i] && Game.gameBoard[0][i] != '') {
-                    Game.gameOver = true;                
-                    alert(`Player ${Game.gameBoard[i][0]} wins!`);
+                    Game.gameOver = true;             
+                    alert(`Player ${Game.currentPlayer} wins!`);
                     return;
                 }                        
             }
             // checar Diagonais
             if(Game.gameBoard[0][0] == Game.gameBoard[1][1] && Game.gameBoard[0][0] == Game.gameBoard[2][2] && Game.gameBoard[0][0] != ''){
                 Game.gameOver = true;            
-                alert(`Player ${Game.gameBoard[0][0]} wins!`);
+                alert(`Player ${Game.currentPlayer} wins!`);
                 return;
             }
             if(Game.gameBoard[0][2] == Game.gameBoard[1][1] && Game.gameBoard[0][2] == Game.gameBoard[2][0] && Game.gameBoard[0][2] != ''){
                 Game.gameOver = true;            
-                alert(`Player ${Game.gameBoard[0][2]} wins!`);
+                alert(`Player ${Game.currentPlayer} wins!`);
                 return;
             }
         }
@@ -119,5 +118,6 @@
         }
         function setCellValue(cells,index){
             cells[index].textContent = Game.currentPlayer;
-            Game.currentPlayer = Game.currentPlayer === 'X' ? 'O' : 'X'; 
+            checkWinner();
+           Game.currentPlayer = Game.currentPlayer === 'X' ? 'O' : 'X'; 
         }
