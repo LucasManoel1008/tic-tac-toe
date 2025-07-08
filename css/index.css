@@ -4,7 +4,10 @@ main {
     align-items: center;
     justify-content: center;
     height: 90vh;
+    max-width: 90%;
+    padding: 10px;
     background-color: #f0f0f0;
+    margin: 0 auto;
 }
 
 .title {
@@ -65,7 +68,7 @@ main {
 
     @media screen and (max-width: 600px) {
     .title h2 {
-        font-size: 1.6em;
+        font-size: 1.3em;
     }
     .mainOptions ul li {
         font-size: 1.2em;

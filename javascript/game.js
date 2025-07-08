@@ -1,3 +1,4 @@
+
     const Game = {
     gameBoard: [],
     currentPlayer: 'X',
@@ -20,7 +21,7 @@
     }
 
     function playOnBoard(index, cells) {
-
+            
             if(isGameOver()) return endGame();                 
             let row = getRow(index);
             let col = getCol(index)    
@@ -105,6 +106,7 @@
             createBoard();
             Game.currentPlayer = 'X';
             Game.gameOver = false;
+            document.getElementById('playerTime').textContent = `Current Player: ${Game.currentPlayer}`;
             runGame();
         }
         function markBoard(row, col) {
@@ -115,9 +117,10 @@
             return false;
         }
         function setCellValue(cells,index){
-            cells[index].textContent = Game.currentPlayer;
-            
             checkWinner();
+            cells[index].textContent = Game.currentPlayer
+            cells[index].classList.add(Game.currentPlayer)
+            
            Game.currentPlayer = Game.currentPlayer === 'X' ? 'O' : 'X'; 
            document.getElementById('playerTime').textContent = `Current Player: ${Game.currentPlayer}`;
         }
