@@ -15,7 +15,7 @@
 
     function runGame() { 
 
-        if (isGameOver()) return    ();        
+        if (isGameOver()) return endGame();        
         
     }
 
