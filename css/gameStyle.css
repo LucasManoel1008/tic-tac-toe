@@ -29,6 +29,12 @@
     transform: scale(1.05);
     background-color: var(--hover-color);
 }
+.gameBoard .board .cell.X{    
+    color: var(--colorX);
+}
+.gameBoard .board .cell.O{
+    color: var(--colorO);
+}
 .gameBoard .buttonResetGame{
     margin-top: 30px;
     padding: 10px 20px;
