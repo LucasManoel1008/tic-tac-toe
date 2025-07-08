@@ -23,9 +23,15 @@
 
             if(isGameOver()) return endGame();        
             let row = getRow(index);
-            let col = getCol(index)        
-            markBoard(row, col);
-            setCellValue(cells, index);
+            let col = getCol(index)    
+            if(markBoard(row, col)) { 
+                setCellValue(cells, index);
+            }
+            else {
+                alert('Cell already marked! Choose another one.');
+                return;
+            }
+            
             checkWinner();
 
         }
@@ -105,7 +111,7 @@
             runGame();
         }
         function markBoard(row, col) {
-            if(Game.gameBoard[row][col] === ''){
+            if(Game.gameBoard[row][col] == ''){
                 Game.gameBoard[row][col] = Game.currentPlayer;                       
                 return true;
             }
