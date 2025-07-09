@@ -9,7 +9,15 @@
 </head>
 <body>
     <div class="gameBoard">
-        <h2 id="playerTime">Current Player: X</h2>
+        <div class="gameAlert" id="gameAlert">
+            <p id="messageTitle" class="message">                
+            </p>
+            <br />
+            <span>
+                <span id="messageContent"></span>
+            </span>
+        </div>
+        <h2 id="playerTime" style="margin-bottom: 20px;">Current Player: X</h2>
         <div class="board" id="board">
             <div class="cell" id="0"></div>
             <div class="cell" id="1"></div>
@@ -25,6 +33,6 @@
         <a href="../index.html" id="backButton" class="mainMenuButton">Return Tittle</a>
     </div>
 </body>
-<script src="../javascript/game.js"></script>
-<script src="..../javascript/alert.js"></script>
+<script src="../javascript/game.js" type="module"></script>
+
 </html>
