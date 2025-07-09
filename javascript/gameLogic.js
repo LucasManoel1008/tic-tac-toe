@@ -8,11 +8,7 @@ export const GameLogic = {
     checkWinner() {
         
         // empate
-        if (GameBoard.board.every(row => row.every(cell => cell !== ''))) {
-            gameAlert('Game Over', 'It\'s a draw! No more moves left.');
-            this.gameOver = true;
-            return;
-        }
+       
         
         for (let i = 0; i < 3; i++) {
             // Linhas
@@ -52,6 +48,11 @@ export const GameLogic = {
             this.gameOver = true;
             gameAlert(`Player ${this.currentPlayer} wins!`, 
                      `Player ${this.currentPlayer} has won by completing the secondary diagonal.`);
+            return;
+        }
+         if (GameBoard.board.every(row => row.every(cell => cell !== ''))) {
+            gameAlert('Game Over', 'It\'s a draw! No more moves left.');
+            this.gameOver = true;
             return;
         }
     },
