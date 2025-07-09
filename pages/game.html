@@ -10,12 +10,16 @@
 <body>
     <div class="gameBoard">
         <div class="gameAlert" id="gameAlert">
-            <p id="messageTitle" class="message">                
-            </p>
-            <br />
-            <span>
-                <span id="messageContent"></span>
-            </span>
+            <div class="gameAlertContent" id="gameAlertContent">
+                <p id="messageTitle" class="messageTitle">                
+                </p>
+                <br />
+                <span>
+                    <span id="messageContent" class="messageContent"></span>
+                    <br />
+                    <button type="button" id="closeButton" class="closeButton">Close</button>
+                </span>
+            </div>
         </div>
         <h2 id="playerTime" style="margin-bottom: 20px;">Current Player: X</h2>
         <div class="board" id="board">

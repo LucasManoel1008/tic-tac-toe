@@ -6,6 +6,7 @@ export const GameLogic = {
     gameOver: false,
     
     checkWinner() {
+        
         // empate
         if (GameBoard.board.every(row => row.every(cell => cell !== ''))) {
             gameAlert('Game Over', 'It\'s a draw! No more moves left.');
